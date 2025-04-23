@@ -1,38 +1,111 @@
-.App {
+/* General Styling */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('./Asset/tree1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f4e9cd;
   text-align: center;
+
+  /* 👇 Add this if not already present */
+  transition: background-image 1s ease-in-out, background-color 1s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header Styling */
+.header-title {
+  background: rgba(34, 49, 34, 0.7); /* Dark green transparent */
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5fe1a2;
+  border: 5px solid rgba(255, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#qr-reader{
+  border: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Scanner Box */
+.scanner-box {
+  background: rgba(255, 255, 255, 0.2); /* Light transparent white */
+  padding: 20px;
+  border-radius: 1rem;
+  width: 85%;
+  max-width: 400px;
+  margin: 20px 0;
+  backdrop-filter: blur(5px); /* Soft blur effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 5px solid;
+}
+
+/* Tree Information */
+.tree-info {
+  background: rgba(20, 30, 20, 0.8); /* Dark green overlay */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1; 
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: #1b5e20;
+  border :solid;
+}
+
+.tree-info:hover{
+  transform: scale(1.05);            /* Slight zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for lift effect */
+}
+
+.tree-info h2 {
+  color: #f4e9cd;
+  text-decoration: underline;
+}
+
+.tree-info p {
+  color: #e1d5b2;
+}
+
+/* Button Styling */
+.scan-btn{
+  background-color: #2e7d32;        /* Rich green base */
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.2s ease, 
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scan-btn:hover{
+  background-color: #1b5e20;        /* Darker green on hover */
+  transform: scale(1.05);           /* Slight zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 22px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .scanner-box, .tree-info {
+    width: 90%;
   }
 }
